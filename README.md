@@ -115,6 +115,7 @@ Desde Swagger puedes probar todos los endpoints directamente en el navegador sin
 | Método | URL | Descripción | Respuesta |
 |--------|-----|-------------|-----------|
 | `GET` | `/docentes` | Listar todos los docentes | `200 OK` |
+| `GET` | `/docentes/{id}` | Obtener docente por ID | `200 OK` |
 | `POST` | `/docentes` | Crear un docente | `201 Created` |
 | `PUT` | `/docentes/{id}` | Actualizar docente por ID | `200 OK` |
 | `DELETE` | `/docentes/{id}` | Eliminar docente por ID | `204 No Content` |
