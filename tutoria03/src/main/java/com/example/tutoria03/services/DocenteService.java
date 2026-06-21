@@ -33,6 +33,7 @@ public class DocenteService {
                 docente.getTipoDocumento(), docente.getNumeroDocumento())) {
             throw new DocenteDuplicadoException(docente.getTipoDocumento(), docente.getNumeroDocumento());
         }
+        docente.setId(null);
         return docenteRepository.save(docente);
     }
 

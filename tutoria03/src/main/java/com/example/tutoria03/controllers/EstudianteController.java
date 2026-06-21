@@ -30,17 +30,18 @@ public class EstudianteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Estudiante> getStudentById(@PathVariable("id") int id) {
+    public ResponseEntity<Estudiante> getStudentById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(estudianteService.GetStudentById(id));
     }
 
     @PostMapping
     public ResponseEntity<Estudiante> save(@RequestBody Estudiante estudiante){
-        return ResponseEntity.ok(estudianteService.save(estudiante));
+        return ResponseEntity.status(org.springframework.http.HttpStatus.CREATED)
+                .body(estudianteService.save(estudiante));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Estudiante> update(@PathVariable("id") int id, @RequestBody Estudiante estudiante){
+    public ResponseEntity<Estudiante> update(@PathVariable("id") Long id, @RequestBody Estudiante estudiante){
         estudiante.setId(id);
         Estudiante updated = estudianteService.update(estudiante);
         if (updated == null) return ResponseEntity.notFound().build();
@@ -48,7 +49,7 @@ public class EstudianteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable("id") int id){
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         boolean deleted = estudianteService.Delete(id);
         if (!deleted) return ResponseEntity.notFound().build();
         return ResponseEntity.noContent().build();

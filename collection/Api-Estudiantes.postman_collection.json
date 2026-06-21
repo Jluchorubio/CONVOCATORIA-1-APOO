@@ -16,7 +16,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"id\": 0,\r\n    \"nombres\": \"Carlos Medina\",\r\n    \"correo\": \"carlos@yopmail.com\",\r\n    \"numeroTelefono\": \"3107265423\",\r\n    \"carrera\": \"Sistemas\",\r\n    \"direccion\": \"carrera 6\",\r\n    \"semestre\": \"V\",\r\n    \"activo\": true\r\n}",
+          "raw": "{\r\n    \"nombres\": \"Carlos Medina\",\r\n    \"correo\": \"carlos@yopmail.com\",\r\n    \"numeroTelefono\": \"3107265423\",\r\n    \"carrera\": \"Sistemas\",\r\n    \"direccion\": \"carrera 6\",\r\n    \"semestre\": \"V\",\r\n    \"activo\": true\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -54,13 +54,14 @@
           }
         },
         "url": {
-          "raw": "localhost:8089/estudiantes",
+          "raw": "localhost:8089/estudiantes/2",
           "host": [
             "localhost"
           ],
           "port": "8089",
           "path": [
-            "estudiantes"
+            "estudiantes",
+            "2"
           ]
         }
       },

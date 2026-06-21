@@ -18,13 +18,12 @@ public class EstudianteService {
         return (ArrayList<Estudiante>) estudianteRepository.findAll();
     }
 
-    public Estudiante GetStudentById(int id){
+    public Estudiante GetStudentById(Long id){
         return estudianteRepository.findById(id).orElse(null);
     }
 
     public Estudiante save(Estudiante estudiante){
-        return !existeEstudiante(estudiante.getId()) 
-                ? estudianteRepository.save(estudiante) : null;
+        return estudianteRepository.save(estudiante);
     }
 
     public Estudiante update(Estudiante estudiante){
@@ -32,14 +31,14 @@ public class EstudianteService {
              ? estudianteRepository.save(estudiante) : null;
     }
 
-    public boolean Delete(int id){
+    public boolean Delete(Long id){
         if (!existeEstudiante(id)) return false;
         estudianteRepository.deleteById(id);
         return true;
     }
 
-    private boolean existeEstudiante(int id){
-        return estudianteRepository.findById(id).orElse(null) != null;
+    private boolean existeEstudiante(Long id){
+        return id != null && estudianteRepository.findById(id).isPresent();
     }
 
 }

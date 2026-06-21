@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Content \"$env:TEMP\\\\run2_out.txt\" | Select-String \"ERROR|Exception|500|constraint|violation\" | Select-Object -Last 15)"
+    ]
+  }
+}

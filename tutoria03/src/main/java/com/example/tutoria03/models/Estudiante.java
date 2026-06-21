@@ -1,6 +1,8 @@
 package com.example.tutoria03.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -9,7 +11,8 @@ import jakarta.persistence.Table;
 public class Estudiante {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombres;
     private String correo;
     private String numeroTelefono;
@@ -18,11 +21,10 @@ public class Estudiante {
     private String semestre;
     private boolean activo;
 
-    // methods 
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getNombres() {

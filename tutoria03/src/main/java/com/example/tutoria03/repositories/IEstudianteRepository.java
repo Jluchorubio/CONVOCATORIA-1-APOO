@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.example.tutoria03.models.Estudiante;
 
 @Repository
-public interface IEstudianteRepository extends CrudRepository<Estudiante,Integer> {
+public interface IEstudianteRepository extends CrudRepository<Estudiante,Long> {
     // reescribir o hacer consulta sql nativa
 }
